@@ -1310,3 +1310,19 @@ System memory in use after: 111.8 MB.
 Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 3029.
 Total: 3.963600 ms (FindLiveObjects: 0.325900 ms CreateObjectMapping: 0.665400 ms MarkObjects: 2.946500 ms  DeleteObjects: 0.024200 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 474.786567 seconds.
+  path: ProjectSettings/TagManager.asset
+  artifactKey: Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6f31fd60f89edf9cdbea5472cf610e2') in 0.073941 seconds
+  Import took 0.081645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 13.188804 seconds.
+  path: Assets/Prefabs/SeekingEnemy.prefab
+  artifactKey: Guid(8e9c41a13a7d7334aa24cabd343bc516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/SeekingEnemy.prefab using Guid(8e9c41a13a7d7334aa24cabd343bc516) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ca78701facd8a3ed85e583ac22a06d5') in 0.301387 seconds
+  Import took 0.310400 seconds .
+
