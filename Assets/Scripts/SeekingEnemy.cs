@@ -6,6 +6,7 @@ public class SeekingEnemy : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] float seekingRadius = 10000f;
+    [SerializeField] float maxSpeed = 2f;
     GameObject player;
 
     protected Vector3 vehiclePosition;
@@ -58,7 +59,7 @@ public class SeekingEnemy : MonoBehaviour
 
         // Step 2: Scale vel to max speed
         desiredVelocity.Normalize();
-        desiredVelocity = desiredVelocity * 2.0f;
+        desiredVelocity = desiredVelocity * maxSpeed;
 
         // Step 3:  Calculate seeking steering force
         Vector3 seekingForce = desiredVelocity - velocity;
