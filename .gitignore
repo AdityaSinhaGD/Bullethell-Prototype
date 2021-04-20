@@ -5,6 +5,7 @@
 /Temp/**
 /Library/**
 /obj/**
+/Logs/**
 
 # Visual Studio / Rider / MonoDevelop generated
 /ExportedObj/**
