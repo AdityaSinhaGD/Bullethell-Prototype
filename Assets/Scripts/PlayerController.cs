@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,IDamageable
 {
     [SerializeField] public  float movementSpeed = 15f;
-
+    [SerializeField] public float playerHealth = 30f;
     [SerializeField] private Transform projectileSpawn;
     [SerializeField] public GameObject projectilePrefab;
 
@@ -95,6 +95,17 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Powerup") {
             other.GetComponent<Powerup>().applyPowerup(this);
+        }
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        playerHealth -= damageTaken;
+        //todo Damage Effects and shield.
+        Debug.Log("Player Hit");
+        if (playerHealth <= 0)
+        {
+            Debug.Log("player dead");
         }
     }
 }
