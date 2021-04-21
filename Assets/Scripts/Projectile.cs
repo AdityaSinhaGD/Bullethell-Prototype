@@ -6,6 +6,8 @@ public class Projectile : MonoBehaviour
 {
     public float projectileForce = 30f;
 
+    public Vector3 direction;
+
     private new Rigidbody rigidbody;
 
     // Start is called before the first frame update
