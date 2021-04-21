@@ -29,6 +29,8 @@
 *.orig.*
 *sln*
 
+.vscode
+
 .idea/**
 /Assets/Plugins/Editor/Jetbrains/*
 /Assets/Plugins/Editor/Jetbrains.meta
