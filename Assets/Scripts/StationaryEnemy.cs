@@ -25,20 +25,28 @@ public class StationaryEnemy : MonoBehaviour,IDamageable
     // Update is called once per frame
     void Update()
     {
-        transform.LookAt(transform.forward);
         if (Vector3.Distance(transform.position, player.position) < detectionRadius)
         {
-            Vector3 targetDirection = (player.position - transform.position).normalized;
-            Quaternion lookRotation = Quaternion.LookRotation(targetDirection);
-            transform.rotation = lookRotation;
-
-            if(Time.time >= nextTimeToFire)
-            {
-                nextTimeToFire = Time.time + 1f / fireRate;
-                Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
-            }
+            TargetPlayer();
+            Shoot();
 
         }
+    }
+
+    private void Shoot()
+    {
+        if (Time.time >= nextTimeToFire)
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+            Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
+        }
+    }
+
+    private void TargetPlayer()
+    {
+        Vector3 targetDirection = (player.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(targetDirection);
+        transform.rotation = lookRotation;
     }
 
     public void TakeDamage(float damageTaken)

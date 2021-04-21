@@ -101,7 +101,7 @@ public class PlayerController : MonoBehaviour,IDamageable
     public void TakeDamage(float damageTaken)
     {
         playerHealth -= damageTaken;
-        //todo Damage Effects
+        //todo Damage Effects and shield.
         Debug.Log("Player Hit");
         if (playerHealth <= 0)
         {
