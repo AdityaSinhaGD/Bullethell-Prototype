@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeekingEnemy : MonoBehaviour
+public class SeekingEnemy : MonoBehaviour,IDamageable
 {
     // Start is called before the first frame update
     [SerializeField] float seekingRadius = 10000f;
     [SerializeField] float maxSpeed = 2f;
     GameObject player;
-
+    public float health = 50f;
     protected Vector3 vehiclePosition;
     public Vector3 acceleration;
     public Vector3 direction;
@@ -66,5 +66,14 @@ public class SeekingEnemy : MonoBehaviour
 
         // Step 4: Return force
         return seekingForce;
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        health -= damageTaken;
+        if (health <= 0)
+        {
+            Debug.Log("enemyDown");
+        }
     }
 }
