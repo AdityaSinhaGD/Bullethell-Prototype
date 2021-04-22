@@ -1,16 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour,IDamageable
 {
-    [SerializeField] private float movementSpeed = 15f;
-
+    [SerializeField] public  float movementSpeed = 15f;
+    [SerializeField] public float playerHealth = 30f;
     [SerializeField] private Transform projectileSpawn;
     [SerializeField] public GameObject projectilePrefab;
 
+    public bool multiBullet = false;
+
+    public Action<PlayerController> removePowerup;
+    public GameObject shield;
+
+
     private CharacterController characterController;
     private Camera playerCam;
+    public float powerupTimer;
 
     private void Awake()
     {
@@ -29,13 +37,20 @@ public class PlayerController : MonoBehaviour
     {
         ProcessPlayerInput();
         ProcessFire();
-
+        updatePowerupStatus();
     }
 
     private void ProcessPlayerInput()
     {
         ProcessPlayerTranslation();
         ProcessPlayerRotation();
+    }
+
+    void updatePowerupStatus () {
+        powerupTimer -= Time.deltaTime;
+        if(powerupTimer<=0 && removePowerup != null) {
+            removePowerup(this);
+        }
     }
 
     private void ProcessPlayerRotation()
@@ -64,13 +79,33 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             //todo bullet spawn effects
-            Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
+            if(multiBullet) {
+                int directionMultiplier = -1;
+                for(int i = 0; i < 3; i++, directionMultiplier++) {
+                    Vector3 bullterDirection = Quaternion.AngleAxis(directionMultiplier*  20, Vector3.up) * transform.forward;
+                    Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.LookRotation(bullterDirection));    
+                }
+            } else {
+                Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        //Powerup pickups.
-        Debug.Log(other.transform.name);
+        if(other.gameObject.tag == "Powerup") {
+            other.GetComponent<Powerup>().applyPowerup(this);
+        }
+    }
+
+    public void TakeDamage(float damageTaken)
+    {
+        playerHealth -= damageTaken;
+        //todo Damage Effects and shield.
+        Debug.Log("Player Hit");
+        if (playerHealth <= 0)
+        {
+            Debug.Log("player dead");
+        }
     }
 }
