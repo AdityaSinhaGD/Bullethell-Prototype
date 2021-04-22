@@ -7,6 +7,8 @@ class MultipleBulletsPowerup : Powerup {
 
     public override void applyEffect(PlayerController controller) {
         controller.multiBullet = true;
+        if (hudManager)
+            hudManager.StartPowerupTimer(this, effectTime);
     }
 
     public override void removeEffect(PlayerController controller) {
