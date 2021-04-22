@@ -602,3 +602,4 @@ Received Import Request.
 Start importing Assets/Materials/ExplosionMat.mat using Guid(6853bef069110d0438846ab54744f35b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '30955b41d8053eae1b19b9170942c63d') in 0.352739 seconds
   Import took 0.358530 seconds .
 
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
