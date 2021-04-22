@@ -51,6 +51,8 @@ public class PlayerController : MonoBehaviour
         if(powerupTimer<=0 && removePowerup != null) {
             removePowerup(this);
         }
+        if (powerupTimer > 0)
+            Debug.Log("PowerTimer: " + powerupTimer);
     }
 
     private void ProcessPlayerRotation()
