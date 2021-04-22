@@ -20,7 +20,8 @@ public abstract class Powerup : MonoBehaviour {
 
     public void applyPowerup(PlayerController controller) {
         applyEffect(controller);
-        controller.powerupTimer = effectTime;
+        //controller.powerupTimer = effectTime;
+        controller.StartPowerupTimer(effectTime);
         controller.removePowerup = removeEffect;
         Destroy(this.gameObject);
 

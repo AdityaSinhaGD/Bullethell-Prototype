@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour,IDamageable
 {
     [SerializeField] public  float movementSpeed = 15f;
-    [SerializeField] public float playerHealth = 30f;
+    [SerializeField] public float maxHealth = 30f;
+    public float currentHealth;
     [SerializeField] private Transform projectileSpawn;
     [SerializeField] public GameObject projectilePrefab;
 
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour,IDamageable
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
@@ -37,7 +38,7 @@ public class PlayerController : MonoBehaviour,IDamageable
     {
         ProcessPlayerInput();
         ProcessFire();
-        updatePowerupStatus();
+        //updatePowerupStatus();
     }
 
     private void ProcessPlayerInput()
@@ -51,8 +52,24 @@ public class PlayerController : MonoBehaviour,IDamageable
         if(powerupTimer<=0 && removePowerup != null) {
             removePowerup(this);
         }
-        if (powerupTimer > 0)
-            Debug.Log("PowerTimer: " + powerupTimer);
+    }
+
+    public void StartPowerupTimer(float duration)
+    {
+        StartCoroutine(UpdatePowerupStatus(duration));
+    }
+
+    private IEnumerator UpdatePowerupStatus(float duration)
+    { 
+        powerupTimer = duration;
+        while (powerupTimer > 0) 
+        {
+            yield return new WaitForSeconds(Time.deltaTime);
+            powerupTimer -= Time.deltaTime;
+        }
+
+        if (removePowerup != null)
+            removePowerup(this);
     }
 
     private void ProcessPlayerRotation()
@@ -102,10 +119,10 @@ public class PlayerController : MonoBehaviour,IDamageable
 
     public void TakeDamage(float damageTaken)
     {
-        playerHealth -= damageTaken;
+        currentHealth -= damageTaken;
         //todo Damage Effects and shield.
         Debug.Log("Player Hit");
-        if (playerHealth <= 0)
+        if (currentHealth <= 0)
         {
             Debug.Log("player dead");
         }

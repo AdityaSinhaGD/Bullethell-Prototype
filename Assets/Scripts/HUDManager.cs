@@ -48,20 +48,19 @@ public class HUDManager : MonoBehaviour
 
     private void UpdateLifeBar() //Updates player life bar
     {
-        //Get reference to player health and max health (TEMP VARIABLES)
-        float currentHealth = 100.0f;
-        float maxHealth = 100.0f;
-
-        float percentHealth = currentHealth / maxHealth;
+        float percentHealth = 0;
+        
+        if (playerScript)
+            percentHealth = playerScript.currentHealth / playerScript.maxHealth;
 
         if (lifeSlider) //Updates life bar value
             lifeSlider.value = percentHealth;
 
         if (lifeFill) //Updates life bar color
         {
-            if (percentHealth <= 0.25f && lifeFill.color != Color.red) //Set color to red
+            if (percentHealth <= 0.15f && lifeFill.color != Color.red) //Set color to red
                 lifeFill.color = Color.red;
-            else if (percentHealth <= 0.5f && lifeFill.color != Color.yellow) //Set color to yellow
+            else if (percentHealth > 0.15f && percentHealth <= 0.5f && lifeFill.color != Color.yellow) //Set color to yellow
                 lifeFill.color = Color.yellow;
             else if (percentHealth > 0.5f && lifeFill.color != Color.green) //Set color to green
                 lifeFill.color = Color.green;
@@ -106,8 +105,6 @@ public class HUDManager : MonoBehaviour
 
             if (shotTimer)
                 shotTimer.fillAmount = powerupRemaining / powerupDuration;
-
-            Debug.Log("Powerup Remaining: " + powerupRemaining);
         }
 
         shotIcon.SetActive(false); //Hides shot icon
