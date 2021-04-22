@@ -13,6 +13,7 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
     public Vector3 acceleration;
     public Vector3 direction;
     public Vector3 velocity;
+    [SerializeField] GameObject explosionEffect;
 
     private void Awake()
     {
@@ -74,6 +75,9 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
         if (health <= 0)
         {
             Debug.Log("enemyDown");
+
+            //spawn explosion effect
+            Instantiate(explosionEffect, transform.position, transform.rotation);
         }
     }
 }
