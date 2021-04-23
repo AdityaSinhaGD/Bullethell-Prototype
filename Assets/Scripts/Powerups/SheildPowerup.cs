@@ -6,6 +6,8 @@ class SheildPowerup : Powerup {
 
     public override void applyEffect(PlayerController controller) {
         controller.shield.SetActive(true);
+        if (hudManager)
+            hudManager.StartPowerupTimer(this, effectTime);
     }
 
     public override void removeEffect(PlayerController controller) {
