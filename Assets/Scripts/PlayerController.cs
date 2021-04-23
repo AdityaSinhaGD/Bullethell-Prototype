@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour,IDamageable
+public class PlayerController : MonoBehaviour, IDamageable
 {
-    [SerializeField] public  float movementSpeed = 15f;
+    [SerializeField] public float movementSpeed = 15f;
     [SerializeField] public float maxHealth = 30f;
     public float currentHealth;
     [SerializeField] private Transform projectileSpawn;
@@ -47,9 +47,11 @@ public class PlayerController : MonoBehaviour,IDamageable
         ProcessPlayerRotation();
     }
 
-    void updatePowerupStatus () {
+    void updatePowerupStatus()
+    {
         powerupTimer -= Time.deltaTime;
-        if(powerupTimer<=0 && removePowerup != null) {
+        if (powerupTimer <= 0 && removePowerup != null)
+        {
             removePowerup(this);
         }
     }
@@ -60,9 +62,9 @@ public class PlayerController : MonoBehaviour,IDamageable
     }
 
     private IEnumerator UpdatePowerupStatus(float duration)
-    { 
+    {
         powerupTimer = duration;
-        while (powerupTimer > 0) 
+        while (powerupTimer > 0)
         {
             yield return new WaitForSeconds(Time.deltaTime);
             powerupTimer -= Time.deltaTime;
@@ -98,13 +100,17 @@ public class PlayerController : MonoBehaviour,IDamageable
         if (Input.GetButtonDown("Fire1"))
         {
             //todo bullet spawn effects
-            if(multiBullet) {
+            if (multiBullet)
+            {
                 int directionMultiplier = -1;
-                for(int i = 0; i < 3; i++, directionMultiplier++) {
-                    Vector3 bullterDirection = Quaternion.AngleAxis(directionMultiplier*  20, Vector3.up) * transform.forward;
-                    Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.LookRotation(bullterDirection));    
+                for (int i = 0; i < 3; i++, directionMultiplier++)
+                {
+                    Vector3 bullterDirection = Quaternion.AngleAxis(directionMultiplier * 20, Vector3.up) * transform.forward;
+                    Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.LookRotation(bullterDirection));
                 }
-            } else {
+            }
+            else
+            {
                 Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
             }
         }
@@ -112,8 +118,14 @@ public class PlayerController : MonoBehaviour,IDamageable
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Powerup") {
+        if (other.gameObject.tag == "Powerup")
+        {
             other.GetComponent<Powerup>().applyPowerup(this);
+        }
+
+        if (other.gameObject.tag == "SeekingEnemy")
+        {
+            TakeDamage(other.GetComponent<SeekingEnemy>().damageGiven);
         }
     }
 

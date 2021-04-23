@@ -14,6 +14,7 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
     public Vector3 direction;
     public Vector3 velocity;
     [SerializeField] GameObject explosionEffect;
+    [SerializeField] public float damageGiven = 10f;
 
     private void Awake()
     {
