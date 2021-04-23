@@ -122,6 +122,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             other.GetComponent<Powerup>().applyPowerup(this);
         }
+
+        if (other.gameObject.tag == "SeekingEnemy")
+        {
+            TakeDamage(other.GetComponent<SeekingEnemy>().damageGiven);
+        }
     }
 
     public void TakeDamage(float damageTaken)
