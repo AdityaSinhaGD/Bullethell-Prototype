@@ -19,6 +19,8 @@ public abstract class Powerup : MonoBehaviour {
     public abstract void removeEffect(PlayerController controller);
 
     public void applyPowerup(PlayerController controller) {
+        if (controller.removePowerup != null) //Replaces current powerup
+            controller.removePowerup(controller);
         applyEffect(controller);
         //controller.powerupTimer = effectTime;
         controller.StartPowerupTimer(effectTime);

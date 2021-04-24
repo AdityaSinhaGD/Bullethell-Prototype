@@ -6,8 +6,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour, IDamageable
 {
     [SerializeField] public float movementSpeed = 15f;
-    [SerializeField] public float maxHealth = 30f;
-    public float currentHealth;
+    [SerializeField] private float maxHealth = 30f;
+    private float currentHealth;
+    private bool isDead;
+    private bool atGoal;
     [SerializeField] private Transform projectileSpawn;
     [SerializeField] public GameObject projectilePrefab;
 
@@ -16,10 +18,27 @@ public class PlayerController : MonoBehaviour, IDamageable
     public Action<PlayerController> removePowerup;
     public GameObject shield;
 
-
     private CharacterController characterController;
     private Camera playerCam;
     public float powerupTimer;
+
+    public float MaxHealth
+    {
+        get { return maxHealth; }
+    }
+    public float CurrentHealth
+    {
+        get { return currentHealth; }
+    }
+    public bool IsDead
+    {
+        get { return isDead; }
+    }
+
+    public bool AtGoal
+    {
+        get { return atGoal; }
+    }
 
     private void Awake()
     {
@@ -31,6 +50,8 @@ public class PlayerController : MonoBehaviour, IDamageable
     void Start()
     {
         currentHealth = maxHealth;
+        isDead = false;
+        atGoal = false;
     }
 
     // Update is called once per frame
@@ -102,11 +123,12 @@ public class PlayerController : MonoBehaviour, IDamageable
             //todo bullet spawn effects
             if (multiBullet)
             {
-                int directionMultiplier = -1;
-                for (int i = 0; i < 3; i++, directionMultiplier++)
+                //int directionMultiplier = -1;
+                for (int i = -1; i < 2; i++)
                 {
-                    Vector3 bullterDirection = Quaternion.AngleAxis(directionMultiplier * 20, Vector3.up) * transform.forward;
-                    Instantiate(projectilePrefab, projectileSpawn.position, Quaternion.LookRotation(bullterDirection));
+                    Vector3 bulletDirection = Quaternion.AngleAxis(i * 15, Vector3.up) * transform.forward;
+                    Vector3 bulletPosition = projectileSpawn.position + transform.right * 0.1f * i;
+                    Instantiate(projectilePrefab, bulletPosition, Quaternion.LookRotation(bulletDirection));
                 }
             }
             else
@@ -122,6 +144,20 @@ public class PlayerController : MonoBehaviour, IDamageable
         {
             other.GetComponent<Powerup>().applyPowerup(this);
         }
+        else if (other.gameObject.tag == "SeekingEnemy")
+        {
+            TakeDamage(other.gameObject.GetComponent<SeekingEnemy>().damageGiven);
+            other.GetComponent<SeekingEnemy>().TakeDamage(51f);
+        }
+        else if (other.gameObject.tag == "HostileBarrier")
+        {
+            if (other.gameObject.GetComponent<HostileBarrier>())
+                TakeDamage(other.gameObject.GetComponent<HostileBarrier>().Damage);
+        }
+        else if (other.gameObject.tag == "Goal")
+        {
+            atGoal = true;
+        }
     }
 
     public void TakeDamage(float damageTaken)
@@ -131,6 +167,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         Debug.Log("Player Hit");
         if (currentHealth <= 0)
         {
+            isDead = true;
             Debug.Log("player dead");
         }
     }
