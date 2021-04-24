@@ -147,6 +147,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         else if (other.gameObject.tag == "SeekingEnemy")
         {
             TakeDamage(other.gameObject.GetComponent<SeekingEnemy>().damageGiven);
+            other.GetComponent<SeekingEnemy>().TakeDamage(51f);
         }
         else if (other.gameObject.tag == "HostileBarrier")
         {
