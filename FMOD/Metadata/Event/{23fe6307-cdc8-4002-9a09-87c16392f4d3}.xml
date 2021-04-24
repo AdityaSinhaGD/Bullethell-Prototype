@@ -5,7 +5,9 @@
 			<value>Win</value>
 		</property>
 		<property name="note">
-			<value>Source sound: https://freesound.org/people/LittleRobotSoundFactory/sounds/270545/</value>
+			<value>Source sounds:
+https://freesound.org/people/LittleRobotSoundFactory/sounds/270545/
+https://www.zapsplat.com/music/game-music-soft-warm-synth-arpeggios-calming-soothing-game/</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
