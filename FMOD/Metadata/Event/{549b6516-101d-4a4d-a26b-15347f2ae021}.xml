@@ -95,6 +95,9 @@
 		<property name="length">
 			<value>0.85734693877551016</value>
 		</property>
+		<property name="playlistMode">
+			<value>1</value>
+		</property>
 		<relationship name="modulators">
 			<destination>{6a245d40-5028-4f63-8004-9bd6ffef0912}</destination>
 			<destination>{ee026be6-ce5c-4fb9-8be0-90bbb813a4a5}</destination>
