@@ -18,7 +18,7 @@ public class UIManager : MonoBehaviour
         
     }
 
-    //Scene Loading
+    //------------Scene Loading------------
     public void GoToTitle() //Loads Title Screen
     {
         if (IsSceneValid("TitleScene"))
