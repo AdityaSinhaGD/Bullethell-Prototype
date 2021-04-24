@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{28c5c717-441d-400a-9c32-db14d21af647}">
+		<property name="assetPath">
+			<value>WindLoop1.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>34.137664399092969</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{862ba96c-bf1a-49f3-af33-070a1a56c205}</destination>
+		</relationship>
+	</object>
+</objects>
