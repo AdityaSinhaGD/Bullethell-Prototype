@@ -6,6 +6,8 @@ TagManager:
   tags:
   - SeekingEnemy
   - Powerup
+  - Goal
+  - HostileBarrier
   layers:
   - Default
   - TransparentFX

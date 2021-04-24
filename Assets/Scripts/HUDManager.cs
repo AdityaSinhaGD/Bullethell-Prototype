@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class HUDManager : MonoBehaviour
 {
     [SerializeField] private GameObject player; //Gets reference to player
     private PlayerController playerScript; //Reference to player's script
+    [SerializeField] private GameObject goal; //Gets reference to goal
+    //private Goal goalScript; //Reference to goal's script
 
     [SerializeField] private Slider lifeSlider; //Gets reference to life bar
     [SerializeField] private Image lifeFill; //Gets reference to life bar's fill
@@ -44,14 +47,23 @@ public class HUDManager : MonoBehaviour
     private void Update()
     {
         UpdateLifeBar();
+
+        if (playerScript) //Ends the game
+        {
+            if (playerScript.IsDead)
+                GoToGameOver();
+            if (playerScript.AtGoal)
+                GoToWin();
+        }
     }
 
+    //------------HUD Updating------------
     private void UpdateLifeBar() //Updates player life bar
     {
         float percentHealth = 0;
         
         if (playerScript)
-            percentHealth = playerScript.currentHealth / playerScript.maxHealth;
+            percentHealth = playerScript.CurrentHealth / playerScript.MaxHealth;
 
         if (lifeSlider) //Updates life bar value
             lifeSlider.value = percentHealth;
@@ -69,6 +81,7 @@ public class HUDManager : MonoBehaviour
 
     public void StartPowerupTimer(Powerup powerup, float duration) //Updates timer for triple shot power up
     {
+
         if (powerup is MultipleBulletsPowerup)
         {
             if (shotIcon)
@@ -156,5 +169,23 @@ public class HUDManager : MonoBehaviour
         }
 
         speedIcon.SetActive(false); //Hides speed icon
+    }
+
+    //------------Scene Loading------------
+    public void GoToWin() //Loads Win Scene
+    {
+        if (IsSceneValid("WinScene"))
+            SceneManager.LoadScene("WinScene");
+    }
+
+    public void GoToGameOver() //Loads GameOver Scene
+    {
+        if (IsSceneValid("GameOverScene"))
+            SceneManager.LoadScene("GameOverScene");
+    }
+
+    private bool IsSceneValid(string sceneName) //Returns whether the passed scene name is valid
+    {
+        return SceneUtility.GetBuildIndexByScenePath("Scenes/" + sceneName) >= 0;
     }
 }
