@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{2f2ef605-23d6-472a-8438-f6bcec0c8f2f}">
 		<property name="name">
-			<value>PlayerShoot</value>
+			<value>Shoot</value>
 		</property>
 		<property name="note">
 			<value>Source sound: https://freesound.org/people/djfroyd/sounds/348163/</value>

@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.00.00">
 	<object class="Event" id="{e6a1bcb5-1b1c-47df-829e-306ef283f9dd}">
 		<property name="name">
-			<value>EnemyShoot</value>
+			<value>Shoot</value>
 		</property>
 		<property name="note">
 			<value>Source sound: https://freesound.org/people/humanoide9000/sounds/330293/</value>
