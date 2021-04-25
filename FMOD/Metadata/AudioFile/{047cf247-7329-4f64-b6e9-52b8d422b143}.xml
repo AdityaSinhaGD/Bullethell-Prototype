@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{047cf247-7329-4f64-b6e9-52b8d422b143}">
+		<property name="assetPath">
+			<value>WinJingle.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>5.9314999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{862ba96c-bf1a-49f3-af33-070a1a56c205}</destination>
+		</relationship>
+	</object>
+</objects>
