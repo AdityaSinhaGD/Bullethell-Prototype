@@ -126,8 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9fab7a5c38430646a6c43362c10d270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seekingRadius: 20
-  maxSpeed: 3
+  seekingRadius: 25
+  maxSpeed: 5
   health: 50
   acceleration: {x: 0, y: 0, z: 0}
   direction: {x: 0, y: 0, z: 0}
