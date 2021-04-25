@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void ProcessPlayerTranslation()
     {
-        Vector3 inputDirection = new Vector3(Input.GetAxis("Horizontal"), -1.0f * Time.deltaTime, Input.GetAxis("Vertical"));
+        Vector3 inputDirection = new Vector3(Input.GetAxis("Horizontal"), -10.0f, Input.GetAxis("Vertical"));
         Vector3 velocity = movementSpeed * inputDirection;
         characterController.Move(velocity * Time.deltaTime);
     }
