@@ -15,6 +15,7 @@ public class StationaryEnemy : MonoBehaviour,IDamageable
     private Transform player;
 
     private float nextTimeToFire = 0f;
+    private Quaternion lookRotation;
 
     // Start is called before the first frame update
     void Start()
@@ -38,15 +39,16 @@ public class StationaryEnemy : MonoBehaviour,IDamageable
         if (Time.time >= nextTimeToFire)
         {
             nextTimeToFire = Time.time + 1f / fireRate;
-            Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
+            //Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
+            Instantiate(projectilePrefab, projectileSpawn.position, lookRotation);
         }
     }
 
     private void TargetPlayer()
     {
-        Vector3 targetDirection = (player.position - transform.position).normalized;
-        Quaternion lookRotation = Quaternion.LookRotation(targetDirection);
-        transform.rotation = lookRotation;
+        Vector3 targetDirection = (player.position - (transform.position + new Vector3(0, 0.5f, 0))).normalized;
+        lookRotation = Quaternion.LookRotation(targetDirection);
+        transform.rotation = Quaternion.Euler(0, lookRotation.eulerAngles.y, 0);
     }
 
     public void TakeDamage(float damageTaken)
