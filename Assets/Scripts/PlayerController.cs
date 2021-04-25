@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     private void ProcessPlayerTranslation()
     {
-        Vector3 inputDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
+        Vector3 inputDirection = new Vector3(Input.GetAxis("Horizontal"), -1.0f * Time.deltaTime, Input.GetAxis("Vertical"));
         Vector3 velocity = movementSpeed * inputDirection;
         characterController.Move(velocity * Time.deltaTime);
     }
@@ -154,12 +154,11 @@ public class PlayerController : MonoBehaviour, IDamageable
         else if (other.gameObject.tag == "SeekingEnemy")
         {
             TakeDamage(other.gameObject.GetComponent<SeekingEnemy>().damageGiven);
-            other.GetComponent<SeekingEnemy>().TakeDamage(51f);
+            other.gameObject.GetComponent<SeekingEnemy>().TakeDamage(51f);
         }
-        else if (other.gameObject.tag == "HostileBarrier")
+        else if (other.gameObject.tag == "Enemy")
         {
-            if (other.gameObject.GetComponent<HostileBarrier>())
-                TakeDamage(other.gameObject.GetComponent<HostileBarrier>().Damage);
+            TakeDamage(5.0f);
         }
         else if (other.gameObject.tag == "Goal")
         {
@@ -167,9 +166,26 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision");
+        if (collision.gameObject.tag == "SeekingEnemy")
+        {
+            TakeDamage(collision.gameObject.GetComponent<SeekingEnemy>().damageGiven);
+            collision.gameObject.GetComponent<SeekingEnemy>().TakeDamage(51f);
+        }
+        else if (collision.gameObject.tag == "Enemy")
+        {
+            TakeDamage(5.0f);
+        }
+    }
+
     public void TakeDamage(float damageTaken)
     {
-        currentHealth -= damageTaken;
+        if (!shield.activeInHierarchy)
+            currentHealth -= damageTaken;
+        else
+            currentHealth -= damageTaken / 2;
         //todo Damage Effects and shield.
         Debug.Log("Player Hit");
         if (currentHealth <= 0)
