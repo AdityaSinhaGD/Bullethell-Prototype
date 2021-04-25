@@ -68,3 +68,5 @@ fmod_editor.log
 /Assets/_Project/Preferences/Editor/Credentials.meta
 /Assets/Temp/**
 /Assets/Temp.meta
+UserSettings/EditorUserSettings.asset
+Packages/packages-lock.json
