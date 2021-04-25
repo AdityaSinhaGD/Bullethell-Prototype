@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour, IDamageable
     private CharacterController characterController;
     private Camera playerCam;
     public float powerupTimer;
+    private Coroutine powerupCoroutine;
 
     public float MaxHealth
     {
@@ -77,9 +78,15 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
+    public void StopPowerupTimer()
+    {
+        if (powerupCoroutine != null)
+         StopCoroutine(powerupCoroutine);
+    }
+
     public void StartPowerupTimer(float duration)
     {
-        StartCoroutine(UpdatePowerupStatus(duration));
+        powerupCoroutine = StartCoroutine(UpdatePowerupStatus(duration));
     }
 
     private IEnumerator UpdatePowerupStatus(float duration)

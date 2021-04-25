@@ -307,7 +307,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &607503622
 GameObject:
@@ -403,7 +403,7 @@ Transform:
   m_LocalScale: {x: 100, y: 1, z: 100}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &680690284
 GameObject:
@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b359ace3179daa469ef7a867e689283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offset: {x: 0, y: 10, z: -10}
+  offset: {x: 0, y: 10, z: -6.25}
 --- !u!114 &680690289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -629,7 +629,7 @@ Transform:
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &851536896
 Rigidbody:
@@ -761,6 +761,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2118896061013236985, guid: 9e4b737b5a0c8654496a4e486d0af12e, type: 3}
+      propertyPath: rotateSpeed
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 2118896061013236986, guid: 9e4b737b5a0c8654496a4e486d0af12e, type: 3}
       propertyPath: m_Name
       value: multiBullet
@@ -784,7 +788,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 766333871923543926, guid: c202a26541c117445866b45d5ae0804a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 766333871923543926, guid: c202a26541c117445866b45d5ae0804a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -935,7 +939,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1529449671580799117, guid: 50333ba6b53ee8f48950e4337476f4ab, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1529449671580799117, guid: 50333ba6b53ee8f48950e4337476f4ab, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1174,9 +1178,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shield
       objectReference: {fileID: 0}
+    - target: {fileID: 5548412907448059407, guid: b0f2303f2222abe45ad25530c2f1ad08, type: 3}
+      propertyPath: rotateSpeed
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 5548412907448060403, guid: b0f2303f2222abe45ad25530c2f1ad08, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 5548412907448060403, guid: b0f2303f2222abe45ad25530c2f1ad08, type: 3}
       propertyPath: m_LocalPosition.x
