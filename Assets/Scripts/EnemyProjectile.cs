@@ -12,6 +12,8 @@ public class EnemyProjectile : MonoBehaviour
 
     public float damageDealt = 5f;
 
+    [SerializeField] GameObject explosionEffect;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,7 @@ public class EnemyProjectile : MonoBehaviour
         if (damageable != null && collision.gameObject.tag == "Player")
         {
             damageable.TakeDamage(damageDealt);
+            Instantiate(explosionEffect, transform.position, transform.rotation);
         }
     }
 
