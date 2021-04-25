@@ -259,7 +259,7 @@ MonoBehaviour:
   movementSpeed: 15
   maxHealth: 50
   projectileSpawn: {fileID: 1529449670892876353}
-  projectilePrefab: {fileID: 809033531706897107, guid: 4a0015baaa7013c48aa4ad6b5d750131, type: 3}
+  projectilePrefab: {fileID: 809033531706897107, guid: 2b17e21fed5954944aa081fa88be7e2d, type: 3}
   multiBullet: 0
   shield: {fileID: 0}
   powerupTimer: 0
