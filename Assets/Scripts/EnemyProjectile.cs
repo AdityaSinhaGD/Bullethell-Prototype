@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class EnemyProjectile : MonoBehaviour
 {
     public float projectileForce = 30f;
 
@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         IDamageable damageable = collision.transform.GetComponent<IDamageable>();
-        if (damageable != null)
+        if (damageable != null && collision.gameObject.tag == "Player")
         {
             damageable.TakeDamage(damageDealt);
         }

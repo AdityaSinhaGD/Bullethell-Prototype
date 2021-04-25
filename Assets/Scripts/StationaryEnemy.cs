@@ -55,6 +55,7 @@ public class StationaryEnemy : MonoBehaviour,IDamageable
         if (health <= 0)
         {
             Debug.Log("enemyDown");
+            Destroy(gameObject);
         }
     }
 
