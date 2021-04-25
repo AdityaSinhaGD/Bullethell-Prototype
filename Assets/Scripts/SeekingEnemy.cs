@@ -76,15 +76,24 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
         if (health <= 0)
         {
             Debug.Log("enemyDown");
-
+            PlayAudio("event:/Enemy/Explosion");
             //spawn explosion effect
             Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
+        else
+        {
+            PlayAudio("event:/Player/Damage");
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, seekingRadius);
+    }
+
+    private void PlayAudio(string path) //Plays audio found at path
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path);
     }
 }

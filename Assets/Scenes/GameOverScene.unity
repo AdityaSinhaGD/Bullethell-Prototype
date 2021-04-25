@@ -123,60 +123,60 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1001 &250438412
+--- !u!1001 &133984005
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2152383096503902733, guid: c4375a1765914084089aeb8dc59db323, type: 3}
-      propertyPath: m_Name
-      value: GameOverScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 135.14644
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 109.09516
+      value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2213279752386887020, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+    - target: {fileID: 5874035194771884189, guid: c4375a1765914084089aeb8dc59db323, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975477170862774268, guid: c4375a1765914084089aeb8dc59db323, type: 3}
+      propertyPath: m_Name
+      value: GameOverScreen
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4375a1765914084089aeb8dc59db323, type: 3}
@@ -354,5 +354,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}

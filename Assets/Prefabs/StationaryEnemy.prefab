@@ -214,6 +214,7 @@ MonoBehaviour:
   fireRate: 1
   projectilePrefab: {fileID: 809033531706897107, guid: 4a0015baaa7013c48aa4ad6b5d750131, type: 3}
   projectileSpawn: {fileID: 4691791895098029587}
+  explosionEffect: {fileID: 6910679980229868912, guid: ded04fb4a1dd2d04a9497c72618ff2ff, type: 3}
 --- !u!1 &4691791895098029586
 GameObject:
   m_ObjectHideFlags: 0
