@@ -581,6 +581,7 @@ GameObject:
   - component: {fileID: 1299597391474565787}
   - component: {fileID: 1299597391474565780}
   - component: {fileID: 1299597391474565781}
+  - component: {fileID: 1569880520459191584}
   m_Layer: 5
   m_Name: StartButton
   m_TagString: Untagged
@@ -702,6 +703,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1569880520459191584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299597391474565783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1299597391961722474
 GameObject:
   m_ObjectHideFlags: 0
@@ -714,6 +728,7 @@ GameObject:
   - component: {fileID: 1299597391961722478}
   - component: {fileID: 1299597391961722479}
   - component: {fileID: 1299597391961722472}
+  - component: {fileID: 86207895993313451}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -835,18 +850,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &86207895993313451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299597391961722474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &1299597392754192197
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,6 +1016,7 @@ GameObject:
   - component: {fileID: 1299597392956431216}
   - component: {fileID: 1299597392956431217}
   - component: {fileID: 1299597392956431218}
+  - component: {fileID: 6829771980218882290}
   m_Layer: 5
   m_Name: TitleButton
   m_TagString: Untagged
@@ -1121,6 +1138,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6829771980218882290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299597392956431244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &6284948195678268563
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using FMOD.Studio;
 
 public class HUDManager : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] private Image speedTimer; //Gets reference to speed timer
 
 
-
+    private EventInstance gameMusic;
 
     //private float powerupDuration = 0.0f; //Amount of time powerup lasts
     //private float powerupRemaining = 0.0f; //Amount of time left for powerup
@@ -29,6 +30,9 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
+        gameMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game");
+        gameMusic.start();
+
         if (!player) //Attempts to search for player if one has not been assigned
             player = GameObject.Find("Player");
 
@@ -51,9 +55,15 @@ public class HUDManager : MonoBehaviour
         if (playerScript) //Ends the game
         {
             if (playerScript.IsDead)
+            {
+                gameMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 GoToGameOver();
+            }
             if (playerScript.AtGoal)
+            {
+                gameMusic.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
                 GoToWin();
+            }
         }
     }
 
@@ -188,4 +198,5 @@ public class HUDManager : MonoBehaviour
     {
         return SceneUtility.GetBuildIndexByScenePath("Scenes/" + sceneName) >= 0;
     }
+
 }

@@ -22,6 +22,7 @@ public class HybridEnemy : MonoBehaviour,IDamageable
     private float nextTimeToFire = 0f;
     private Quaternion lookRotation;
 
+    [SerializeField] GameObject explosionEffect;
 
     // Start is called before the first frame update
     void Start()
@@ -68,6 +69,7 @@ public class HybridEnemy : MonoBehaviour,IDamageable
     {
         if (Time.time >= nextTimeToFire)
         {
+            PlayAudio("event:/Enemy/Shoot");
             nextTimeToFire = Time.time + 1f / fireRate;
             //Instantiate(projectilePrefab, projectileSpawn.position, transform.rotation);
             Instantiate(projectilePrefab, projectileSpawn.position, lookRotation);
@@ -97,7 +99,13 @@ public class HybridEnemy : MonoBehaviour,IDamageable
         if (health <= 0)
         {
             Debug.Log("enemyDown");
+            PlayAudio("event:/Enemy/Explosion");
+            Instantiate(explosionEffect, transform.position, transform.rotation);
             Destroy(gameObject);
+        }
+        else
+        {
+            PlayAudio("event:/Player/Damage");
         }
     }
 
@@ -105,5 +113,10 @@ public class HybridEnemy : MonoBehaviour,IDamageable
     {
         Gizmos.DrawWireSphere(transform.position, seekDetectionRadius);
         Gizmos.DrawWireSphere(transform.position, engageDetectionRadius);
+    }
+
+    private void PlayAudio(string path) //Plays audio found at path
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path);
     }
 }
