@@ -236,3 +236,4 @@ MonoBehaviour:
   projectileForce: 30
   direction: {x: 0, y: 0, z: 0}
   damageDealt: 5
+  explosionEffect: {fileID: 3816212433936244765, guid: e571c20374092a54ea7473f52cce8365, type: 3}

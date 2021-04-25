@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DissolveMat
-  m_Shader: {fileID: -6465566751694194690, guid: 3d360f7f7c24f3d4e955e71a766328ed, type: 3}
+  m_Name: LightningMat
+  m_Shader: {fileID: -6465566751694194690, guid: e9dfb1c7b842b214db40e2cde10d7aae, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -19,6 +19,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _SampleTexture2D_995cde7284a7422d9355d14876566bab_Texture_1:
+        m_Texture: {fileID: 2800000, guid: 52856e82cff5c004ebf91452d691dd37, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -31,9 +35,6 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - Vector1_40a31e9cc00d4c4ca522c9b3053f363d: 0.04
-    - Vector1_8d5a489969024424b795d67f63c4f44b: 40
-    m_Colors:
-    - Color_27b5ca0ce4814218868964e78f9072f6: {r: 16.94838, g: 13.44448, b: 0, a: 0}
+    m_Floats: []
+    m_Colors: []
   m_BuildTextureStacks: []
