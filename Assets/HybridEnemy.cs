@@ -7,7 +7,8 @@ public class HybridEnemy : MonoBehaviour,IDamageable
     enum AIState { seek, target }
     AIState controlState = AIState.seek;
 
-    public float detectionRadius = 100f;
+    public float seekDetectionRadius = 100f;
+    public float engageDetectionRadius = 100f;
     public float health = 50f;
 
     public float fireRate = 25f;
@@ -31,7 +32,7 @@ public class HybridEnemy : MonoBehaviour,IDamageable
     // Update is called once per frame
     void Update()
     {
-        switch (controlState)
+        /*switch (controlState)
         {
             case AIState.seek:
                 ProcessSeekPlayer();
@@ -41,21 +42,25 @@ public class HybridEnemy : MonoBehaviour,IDamageable
                 break;
             default:
                 break;
-        }
+        }*/
+
+        ProcessEngagePlayer();
     }
 
 
     private void ProcessEngagePlayer()
     {
-        if (Vector3.Distance(transform.position, player.position) < detectionRadius)
+        if (Vector3.Distance(transform.position, player.position) < engageDetectionRadius)
         {
             TargetPlayer();
             Shoot();
 
         }
-        else
+        else if (Vector3.Distance(transform.position, player.position) < seekDetectionRadius)
         {
-            controlState = AIState.seek;
+            //controlState = AIState.seek;
+            TargetPlayer();
+            ProcessSeekPlayer();
         }
     }
 
@@ -78,11 +83,11 @@ public class HybridEnemy : MonoBehaviour,IDamageable
 
     private void ProcessSeekPlayer()
     {
-        if(Vector3.Distance(transform.position, player.position) < detectionRadius)
+        /*if(Vector3.Distance(transform.position, player.position) < seekDetectionRadius)
         {
             controlState = AIState.target;
             return;
-        }
+        }*/
         transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
     }
 
@@ -98,6 +103,7 @@ public class HybridEnemy : MonoBehaviour,IDamageable
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, detectionRadius);
+        Gizmos.DrawWireSphere(transform.position, seekDetectionRadius);
+        Gizmos.DrawWireSphere(transform.position, engageDetectionRadius);
     }
 }

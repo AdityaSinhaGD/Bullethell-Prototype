@@ -82,4 +82,9 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
             Destroy(gameObject);
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(transform.position, seekingRadius);
+    }
 }

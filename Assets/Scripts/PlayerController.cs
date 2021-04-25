@@ -166,20 +166,6 @@ public class PlayerController : MonoBehaviour, IDamageable
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("Collision");
-        if (collision.gameObject.tag == "SeekingEnemy")
-        {
-            TakeDamage(collision.gameObject.GetComponent<SeekingEnemy>().damageGiven);
-            collision.gameObject.GetComponent<SeekingEnemy>().TakeDamage(51f);
-        }
-        else if (collision.gameObject.tag == "Enemy")
-        {
-            TakeDamage(5.0f);
-        }
-    }
-
     public void TakeDamage(float damageTaken)
     {
         if (!shield.activeInHierarchy)
