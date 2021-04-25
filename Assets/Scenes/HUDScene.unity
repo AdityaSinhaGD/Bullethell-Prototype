@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0.99999905, b: 0.99999905, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1122,6 +1122,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 944049421038323893, guid: 50333ba6b53ee8f48950e4337476f4ab, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f930734d13e350d478e6bb9a7c2e57b7, type: 2}
     - target: {fileID: 1529449669965549168, guid: 50333ba6b53ee8f48950e4337476f4ab, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -1411,6 +1415,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3816212433936244764, guid: e571c20374092a54ea7473f52cce8365, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: f731587dbb648af4c84fb8f1ff15e0cb, type: 2}
     - target: {fileID: 3816212433936244765, guid: e571c20374092a54ea7473f52cce8365, type: 3}
       propertyPath: m_Name
       value: SmallExplosion

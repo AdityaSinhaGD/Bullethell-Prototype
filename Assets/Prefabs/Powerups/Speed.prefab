@@ -113,6 +113,8 @@ MonoBehaviour:
   effectTime: 5
   rotateSpeed: 180
   powerupSpeed: 20
+  currentMaterial: {fileID: 2100000, guid: 98974e684a873ee4db8b8c5e5b214a71, type: 2}
+  rimLighting: {fileID: 2100000, guid: f20b5b3636814294a947c2ac61e07a55, type: 2}
 --- !u!1 &331693181294822664
 GameObject:
   m_ObjectHideFlags: 0
