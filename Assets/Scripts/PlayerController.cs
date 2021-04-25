@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour, IDamageable
 
     public void StartPowerupTimer(float duration)
     {
+        PlayAudio("event:/Player/Powerup");
         powerupCoroutine = StartCoroutine(UpdatePowerupStatus(duration));
     }
 
@@ -127,6 +128,7 @@ public class PlayerController : MonoBehaviour, IDamageable
         //todo Check Fire rate and other factors.
         if (Input.GetButtonDown("Fire1"))
         {
+            PlayAudio("event:/Player/Shoot");
             //todo bullet spawn effects
             if (multiBullet)
             {
@@ -172,12 +174,24 @@ public class PlayerController : MonoBehaviour, IDamageable
             currentHealth -= damageTaken;
         else
             currentHealth -= damageTaken / 2;
-        //todo Damage Effects and shield.
+
+        
+
         Debug.Log("Player Hit");
         if (currentHealth <= 0)
         {
             isDead = true;
+            PlayAudio("event:/Player/Explosion");
             Debug.Log("player dead");
         }
+        else
+        {
+            PlayAudio("event:/Player/Damage");
+        }
+    }
+
+    private void PlayAudio(string path) //Plays audio found at path
+    {
+        FMODUnity.RuntimeManager.PlayOneShot(path);
     }
 }
