@@ -172,8 +172,6 @@ public class PlayerController : MonoBehaviour, IDamageable
     {
         if (!shield.activeInHierarchy)
             currentHealth -= damageTaken;
-        else
-            currentHealth -= damageTaken / 2;
 
         
 

@@ -84,6 +84,7 @@ public class SeekingEnemy : MonoBehaviour,IDamageable
         else
         {
             PlayAudio("event:/Player/Damage");
+            seekingRadius *= 2;
         }
     }
 
