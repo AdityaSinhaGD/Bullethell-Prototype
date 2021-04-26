@@ -81,10 +81,10 @@ public class UIManager : MonoBehaviour
 
     public void GoToGame() //Loads Game Scene
     {
-        if (IsSceneValid("GameScene"))
+        if (IsSceneValid("TestLevel"))
         {
             StopAllMusic();
-            SceneManager.LoadScene("GameScene");
+            SceneManager.LoadScene("TestLevel");
         }
     }
 
