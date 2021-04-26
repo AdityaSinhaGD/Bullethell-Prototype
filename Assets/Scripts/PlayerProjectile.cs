@@ -19,13 +19,13 @@ public class PlayerProjectile : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         rigidbody.AddForce(projectileForce * transform.forward, ForceMode.Impulse);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 2f);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         IDamageable damageable = collision.transform.GetComponent<IDamageable>();
-        if (damageable != null && collision.gameObject.tag != "Player")
+        if (damageable != null)
         {
             damageable.TakeDamage(damageDealt);
             Instantiate(explosionEffect, transform.position, transform.rotation);

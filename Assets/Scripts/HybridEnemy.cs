@@ -90,7 +90,8 @@ public class HybridEnemy : MonoBehaviour,IDamageable
             controlState = AIState.target;
             return;
         }*/
-        transform.position = Vector3.MoveTowards(transform.position, player.position, moveSpeed * Time.deltaTime);
+        Vector3 targetPosition = new Vector3(player.position.x, transform.position.y, player.position.z);
+        transform.position = Vector3.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
     }
 
     public void TakeDamage(float damageTaken)
