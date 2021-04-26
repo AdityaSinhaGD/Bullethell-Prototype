@@ -107,6 +107,7 @@ public class HybridEnemy : MonoBehaviour,IDamageable
         else
         {
             PlayAudio("event:/Player/Damage");
+            seekDetectionRadius *= 2;
         }
     }
 
