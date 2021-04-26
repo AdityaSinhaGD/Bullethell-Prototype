@@ -14,29 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637549677311972991
+  lastModified: 637549765342943740
   LoadResult: 0
   FileSizes:
   - Name: Desktop
     Value: 1376
   Exists: 1
---- !u!114 &-7492711286815082296
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 0
 --- !u!114 &-6733078637798690758
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,6 +43,23 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 65
+--- !u!114 &-6521144331674002714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Kamikaze/Activity
+  m_EditorClassIdentifier: 
+  Name: Activity
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 0
 --- !u!114 &-4328855948089546122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,49 +80,10 @@ MonoBehaviour:
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: 171942308905648987}
+  - {fileID: 6347715584434258506}
   MinDistance: 1
   MaxDistance: 20
   Length: 2327
---- !u!114 &-1613069351262703540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 0
---- !u!114 &-1453073569017439575
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Enemy/EnemyShoot
-  m_EditorClassIdentifier: 
-  Path: event:/Enemy/EnemyShoot
-  guid: b5bca1e61c1bdf47829e306ef283f9dd
-  Banks: []
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 392
 --- !u!114 &-665789962485026473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,28 +107,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1099
---- !u!114 &-540111873425577693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/PlayerShoot
-  m_EditorClassIdentifier: 
-  Path: event:/Player/PlayerShoot
-  guid: 05f62e2fd6232a478438f6bcec0c8f2f
-  Banks: []
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 257
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -197,15 +136,15 @@ MonoBehaviour:
   - {fileID: -665789962485026473}
   - {fileID: 6623403159685143220}
   - {fileID: 261702052073959618}
-  - {fileID: 1529853429677609535}
+  - {fileID: 228444254663793342}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2258192204871039120}
   StringsBanks:
   - {fileID: -8247202364843919233}
-  stringsBankWriteTime: 637549677311972991
+  stringsBankWriteTime: 637549765342943740
   cacheVersion: 4
---- !u!114 &171942308905648987
+--- !u!114 &228444254663793342
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,14 +153,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Player/Damage
   m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
+  Path: event:/Player/Damage
+  guid: 88b10b36525d964d8acbc9b5f4923c32
+  Banks:
+  - {fileID: 2258192204871039120}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 242
 --- !u!114 &247902391977230605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -337,63 +282,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 81
---- !u!114 &1179089839750150944
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 1
---- !u!114 &1369690611119682472
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 0
---- !u!114 &1529853429677609535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Damage
-  m_EditorClassIdentifier: 
-  Path: event:/Player/Damage
-  guid: 88b10b36525d964d8acbc9b5f4923c32
-  Banks:
-  - {fileID: 2258192204871039120}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 242
 --- !u!114 &2258192204871039120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,11 +296,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: FMOD/Build/Desktop/Master.bank
   Name: Master
-  lastModified: 637549677311972991
+  lastModified: 637549765342943740
   LoadResult: 0
   FileSizes: []
   Exists: 1
---- !u!114 &5216482629144894857
+--- !u!114 &6347715584434258506
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -421,20 +309,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Player/Damage
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Kamikaze/Activity
   m_EditorClassIdentifier: 
-  Path: event:/Player/Damage
-  guid: 88b10b36525d964d8acbc9b5f4923c32
-  Banks:
-  - {fileID: 2258192204871039120}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 242
+  Name: Activity
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &6623403159685143220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,40 +409,6 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 60004
---- !u!114 &7875124942882431099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 0
---- !u!114 &8317372555132836436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Kamikaze/Activity
-  m_EditorClassIdentifier: 
-  Name: Activity
-  Min: 0
-  Max: 3
-  Default: 0
-  Exists: 0
 --- !u!114 &8775430836498502930
 MonoBehaviour:
   m_ObjectHideFlags: 0
