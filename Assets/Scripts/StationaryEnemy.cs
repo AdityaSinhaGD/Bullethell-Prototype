@@ -67,6 +67,7 @@ public class StationaryEnemy : MonoBehaviour,IDamageable
         else
         {
             PlayAudio("event:/Player/Damage");
+            detectionRadius *= 2;
         }
     }
 
