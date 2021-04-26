@@ -351,6 +351,23 @@ MonoBehaviour:
   Max: 3
   Default: 0
   Exists: 0
+--- !u!114 &2495459912581813511
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Kamikaze/Activity
+  m_EditorClassIdentifier: 
+  Name: Activity
+  Min: 0
+  Max: 3
+  Default: 0
+  Exists: 1
 --- !u!114 &3145158717436508479
 MonoBehaviour:
   m_ObjectHideFlags: 0
