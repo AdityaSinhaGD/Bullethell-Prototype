@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SeekingEnemy : MonoBehaviour,IDamageable
+public class SeekingEnemy : MonoBehaviour, IDamageable
 {
     // Start is called before the first frame update
     [SerializeField] float seekingRadius = 10000f;

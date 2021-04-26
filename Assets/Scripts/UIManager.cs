@@ -15,12 +15,31 @@ public class UIManager : MonoBehaviour
 
     private EventInstance currentMusic;
 
+    private bool firstFrame = true;
+    private GameObject titleScreen;
+    private bool hasTitle = false;
+    private GameObject controlsScreen;
+    private bool hasControls = true;
     private Button[] buttons;
     private EventTrigger[] triggers;
 
     // Start is called before the first frame update
     void Start()
     {
+        titleScreen = GameObject.Find("TitleScreen");
+        if (titleScreen)
+        {
+            hasTitle = true;
+            //titleScreen.SetActive(true);
+        }
+
+        controlsScreen = GameObject.Find("ControlsScreen");
+        if (controlsScreen)
+        {
+            hasControls = true;
+            //controlsScreen.SetActive(false);
+        }
+
         menuMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Menu");
         gameMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game");
         winMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Jingles/Win");
@@ -57,7 +76,11 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (firstFrame)
+        {
+            HideControls();
+            firstFrame = false;
+        }
     }
 
     //------------Scene Loading------------
@@ -70,13 +93,20 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void GoToControls() //Loads Controls Screen
+    public void ShowControls() //Shows Controls Screen
     {
-        if (IsSceneValid("ControlsScene"))
-        {
-            StopAllMusic();
-            SceneManager.LoadScene("ControlsScene");
-        }
+        if (hasTitle)
+            titleScreen.SetActive(false);
+        if (hasControls)
+            controlsScreen.SetActive(true);
+    }
+
+    public void HideControls() //Hides Controls Screen
+    {
+        if (hasTitle)
+            titleScreen.SetActive(true);
+        if (hasControls)
+            controlsScreen.SetActive(false);
     }
 
     public void GoToGame() //Loads Game Scene

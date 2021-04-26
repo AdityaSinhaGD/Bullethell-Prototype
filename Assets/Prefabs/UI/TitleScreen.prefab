@@ -776,7 +776,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5242251843833597450}
         m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
-        m_MethodName: GoToControls
+        m_MethodName: ShowControls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
