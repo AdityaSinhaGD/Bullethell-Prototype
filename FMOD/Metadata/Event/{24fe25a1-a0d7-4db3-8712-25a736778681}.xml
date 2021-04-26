@@ -28,6 +28,7 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 			<destination>{14976187-2202-47b8-98b5-57e92efa6735}</destination>
 		</relationship>
 		<relationship name="markerTracks">
+			<destination>{6d5b79fc-6b3a-46e6-85d8-59ad087f4300}</destination>
 			<destination>{cdc5b1f8-58c3-4e39-9153-7314e6298f4a}</destination>
 			<destination>{0ef829f2-8833-4354-b824-4ae40d424f4c}</destination>
 			<destination>{216432b8-8718-41b7-955f-c6ef142f98d5}</destination>
@@ -66,6 +67,7 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{14976187-2202-47b8-98b5-57e92efa6735}" />
+	<object class="MarkerTrack" id="{6d5b79fc-6b3a-46e6-85d8-59ad087f4300}" />
 	<object class="MarkerTrack" id="{cdc5b1f8-58c3-4e39-9153-7314e6298f4a}" />
 	<object class="MarkerTrack" id="{0ef829f2-8833-4354-b824-4ae40d424f4c}" />
 	<object class="MarkerTrack" id="{216432b8-8718-41b7-955f-c6ef142f98d5}" />
@@ -106,6 +108,8 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 			<destination>{cf832a5c-d1ab-4665-a053-8fbf7595a1ae}</destination>
 			<destination>{15a009aa-3434-452a-bf43-84e3e4b0089a}</destination>
 			<destination>{26c445e9-5287-4de8-b6ec-799de02d8feb}</destination>
+			<destination>{9e80a20b-2481-4747-bcf5-f3017c6672dc}</destination>
+			<destination>{5804b9d5-6bb4-4798-9e65-c57160d10c10}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{363b1a83-af01-49c1-a7ed-e555e6a0a494}">
@@ -269,7 +273,7 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 			<destination>{fb7dea5e-a75c-4893-9b90-6360f43a800c}</destination>
 		</relationship>
 		<relationship name="markerTrack">
-			<destination>{cdc5b1f8-58c3-4e39-9153-7314e6298f4a}</destination>
+			<destination>{6d5b79fc-6b3a-46e6-85d8-59ad087f4300}</destination>
 		</relationship>
 	</object>
 	<object class="LoopRegion" id="{cf832a5c-d1ab-4665-a053-8fbf7595a1ae}">
@@ -317,7 +321,41 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 			<destination>{fb7dea5e-a75c-4893-9b90-6360f43a800c}</destination>
 		</relationship>
 		<relationship name="markerTrack">
+			<destination>{6d5b79fc-6b3a-46e6-85d8-59ad087f4300}</destination>
+		</relationship>
+	</object>
+	<object class="NamedMarker" id="{9e80a20b-2481-4747-bcf5-f3017c6672dc}">
+		<property name="position">
+			<value>0</value>
+		</property>
+		<property name="name">
+			<value>Warning</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{fb7dea5e-a75c-4893-9b90-6360f43a800c}</destination>
+		</relationship>
+		<relationship name="markerTrack">
+			<destination>{6d5b79fc-6b3a-46e6-85d8-59ad087f4300}</destination>
+		</relationship>
+	</object>
+	<object class="TransitionRegion" id="{5804b9d5-6bb4-4798-9e65-c57160d10c10}">
+		<property name="position">
+			<value>0.95000000000000007</value>
+		</property>
+		<property name="length">
+			<value>0.71791383219954641</value>
+		</property>
+		<relationship name="timeline">
+			<destination>{fb7dea5e-a75c-4893-9b90-6360f43a800c}</destination>
+		</relationship>
+		<relationship name="markerTrack">
 			<destination>{cdc5b1f8-58c3-4e39-9153-7314e6298f4a}</destination>
+		</relationship>
+		<relationship name="destination">
+			<destination>{9e80a20b-2481-4747-bcf5-f3017c6672dc}</destination>
+		</relationship>
+		<relationship name="triggerConditions">
+			<destination>{77858bb7-3951-4ffe-b253-b64f07e6e785}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{3e45d023-9cf5-4dd9-be1a-06bd7af02a89}">
@@ -429,6 +467,17 @@ https://www.zapsplat.com/music/grenade-explosion-debris-blast/</value>
 		</property>
 		<property name="maximum">
 			<value>2</value>
+		</property>
+		<relationship name="parameter">
+			<destination>{88f0589e-bf34-4e91-acca-75de281a6d35}</destination>
+		</relationship>
+	</object>
+	<object class="ParameterCondition" id="{77858bb7-3951-4ffe-b253-b64f07e6e785}">
+		<property name="minimum">
+			<value>0</value>
+		</property>
+		<property name="maximum">
+			<value>0</value>
 		</property>
 		<relationship name="parameter">
 			<destination>{88f0589e-bf34-4e91-acca-75de281a6d35}</destination>
