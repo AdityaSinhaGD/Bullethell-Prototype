@@ -19,7 +19,7 @@ public class UIManager : MonoBehaviour
     private GameObject titleScreen;
     private bool hasTitle = false;
     private GameObject controlsScreen;
-    private bool hasControls = true;
+    private bool hasControls = false;
     private Button[] buttons;
     private EventTrigger[] triggers;
 
@@ -28,17 +28,11 @@ public class UIManager : MonoBehaviour
     {
         titleScreen = GameObject.Find("TitleScreen");
         if (titleScreen)
-        {
             hasTitle = true;
-            //titleScreen.SetActive(true);
-        }
 
         controlsScreen = GameObject.Find("ControlsScreen");
         if (controlsScreen)
-        {
             hasControls = true;
-            //controlsScreen.SetActive(false);
-        }
 
         menuMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Menu");
         gameMusic = FMODUnity.RuntimeManager.CreateInstance("event:/Music/Game");
@@ -78,8 +72,8 @@ public class UIManager : MonoBehaviour
     {
         if (firstFrame)
         {
-            HideControls();
             firstFrame = false;
+            HideControls();
         }
     }
 

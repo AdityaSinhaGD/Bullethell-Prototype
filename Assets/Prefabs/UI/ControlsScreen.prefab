@@ -732,9 +732,15 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Fight enemies while avoiding damage. \n\nGrab powerups to temporarily
-    become stronger.\n\nDefeat all the enemies, then enter the goal at the end to
-    win. "
+  m_Text: 'Defeat enemies while avoiding shots from both you and your enemies.
+
+
+    Grab
+    powerups to temporarily become stronger.
+
+
+    Destroy all the enemies, then
+    enter the goal at the end to win. '
 --- !u!1 &1687438512131084614
 GameObject:
   m_ObjectHideFlags: 0
